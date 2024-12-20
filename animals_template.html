@@ -63,11 +63,15 @@
           margin-bottom: 1.25rem;
         }
         </style>
+<link rel="stylesheet"
+  href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js">
+</script>
     </head>
     <body>
         <h1>My Animal Repository</h1>
         <ul class="cards">
-            __REPLACE_ANIMALS_INFO__
+            <py-script src="animals_web_generator.py"></py-script>
         </ul>
     </body>
 </html>
