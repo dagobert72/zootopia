@@ -1,4 +1,5 @@
 import json
+import data_fetcher
 
 def load_data(filename):
     with open(filename, 'r') as f:
@@ -99,3 +100,23 @@ except FileNotFoundError:
     },
   ]
   create_html_page(animals_data)
+
+
+  def main(data_fetcher):
+
+    animal_name = input("Please enter an animal: ")
+    data = data_fetcher.fetch_data(animal_name)
+
+    if data:
+      print(f"Data for '{animal_name}':")
+      for idx, animal in enumerate(data, start=1):
+        print(f"Animal {idx}:")
+        print(f"  Name: {animal.get('name', 'Unknown')}")
+        print(f"  Taxonomy: {animal.get('taxonomy', 'Unknown')}")
+        print(f"  Locations: {animal.get('locations', 'Unknown')}")
+        print(f"  Characteristics: {animal.get('characteristics', 'Unknown')}")
+    else:
+      print(f"No data found for the animal '{animal_name}' or an error occurred.")
+
+if __name__ == "__main__":
+  main()
