@@ -1,0 +1,7 @@
+requests
+os
+load_dotenv
+data_fetcher
+json
+html
+css
